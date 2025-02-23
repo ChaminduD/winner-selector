@@ -1,0 +1,23 @@
+.container{
+  background-image: linear-gradient(124deg, hsl(139, 100%, 88%), hsl(100, 100%, 88%), hsl(123, 100%, 88%));
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: backgroundGradient 5s infinite 1s;
+  position: relative;
+}
+@keyframes backgroundGradient{
+  0%{
+      background-image: linear-gradient(124deg, hsl(139, 100%, 88%), hsl(100, 100%, 88%), hsl(123, 100%, 88%));
+  }
+  50%{
+      background-image: linear-gradient(124deg, hsl(100, 100%, 88%), hsl(123, 100%, 88%), hsl(155, 100%, 88%));
+  }
+  100%{
+      background-image: linear-gradient(124deg, hsl(123, 100%, 88%), hsl(100, 100%, 88%), hsl(139, 100%, 88%));
+  }
+}
+.container h1{
+  margin-bottom: 20px;
+}

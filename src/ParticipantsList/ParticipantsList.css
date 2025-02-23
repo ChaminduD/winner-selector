@@ -1,0 +1,47 @@
+.list-container{
+  padding: 40px;
+  margin-top: 50px;
+  position: relative;
+}
+.participants-list{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 10px;
+  column-gap: 10px;
+  list-style-type: none;
+  counter-reset: item;
+  text-align: center;
+}
+
+#shuffle-btn{
+  color: hsl(0, 0%, 100%);
+  background-color: hsla(0, 0%, 10%, 0.8);
+  left: 4px;
+  right: auto;
+}
+#shuffle-btn:hover{
+  color: hsl(0, 0%, 10%);
+  background-color: hsla(180, 100%, 50%, 0.6);
+}
+#remove-selected-btn{
+  right: 84px;
+}
+#remove-selected-btn:hover{
+  background-color: hsl(0, 0%, 50%);
+}
+
+#total-participants{
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
+  font-weight: bold;
+  color: hsl(223, 100%, 38%);
+  background-color: hsl(160, 100%, 86%);
+  padding: 10px 30px;
+  border: 2px solid hsl(223, 100%, 38%);
+  border-left: none;
+  border-right: none;
+  box-shadow: inset 0 0 20px hsl(47, 100%, 98%);
+}

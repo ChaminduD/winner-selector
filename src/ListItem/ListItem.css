@@ -1,0 +1,54 @@
+.list-item{
+  display: flex;
+  color: hsl(0, 0%, 10%);
+  font-size: 20px;
+  font-weight: bold;
+  padding: 5px 5px 5px 40px;
+  background-color: hsl(163, 100%, 88%);
+  counter-increment: item;
+  position: relative;
+}
+.list-item::before{
+  content: counter(item);
+  position: absolute;
+  left: 0;
+  color: hsl(0, 0%, 10%);
+  background-color: hsl(267, 100%, 92%);
+  padding: 0px 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.list-item button{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.4s ease;
+}
+.list-item button:hover{
+  background-color: hsl(163, 100%, 68%);
+}
+
+.list-text{
+  padding-right: 10px;
+  flex: 1;
+}
+.move-icon, .remove-icon{
+  font-size: 18px;
+  padding: 0 5px;
+  color: hsl(0, 0%, 64%);
+}
+.remove-icon{
+  color: rgb(199, 69, 69);
+}
+
+.selected{
+  background-image: linear-gradient(hsl(0, 0%, 60%), rgb(208, 208, 208));
+  color: hsl(0, 0%, 40%);
+  pointer-events: none;
+}
+.remove-range-highlight{
+  background-color: hsl(0, 100%, 88%);
+}
+.add-replace-highlight{
+  box-shadow: inset 0 0 10px hsl(243, 100%, 33%);
+}

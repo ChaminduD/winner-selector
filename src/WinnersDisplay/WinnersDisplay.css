@@ -1,0 +1,100 @@
+.winners-container{
+  padding: 40px;
+  position: relative;
+  background-image: linear-gradient(90deg, hsl(139, 100%, 88%), hsl(100, 100%, 88%), hsl(139, 100%, 88%));
+  box-shadow: inset 0 0 60px hsl(47, 100%, 98%);
+}
+.winners-list{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 10px;
+  column-gap: 10px;
+  list-style-type: none;
+  counter-reset: item;
+}
+.winners-list .winners-list-item{
+  text-align: center;
+  color: hsl(0, 0%, 10%);
+  font-size: 20px;
+  font-weight: bold;
+  padding: 5px 40px 5px 40px;
+  background-color: hsl(54, 100%, 50%);
+  box-shadow: inset 0 0 20px hsl(35, 100%, 59%);
+  counter-increment: item;
+  position: relative;
+  animation: winnersList 3s infinite 1s alternate;
+  overflow: hidden;
+}
+@keyframes winnersList{
+  from{
+      background-color: hsl(54, 100%, 50%);
+      box-shadow: inset 0 0 20px hsl(35, 100%, 59%);
+  }
+  to{
+      background-color: hsl(52, 100%, 50%);
+      box-shadow: inset 0 0 20px hsl(43, 100%, 59%);
+  }
+}
+.winners-list .winners-list-item::before{
+  content: counter(item);
+  position: absolute;
+  left: 0;
+  top: -4px;
+  color: hsla(0, 0%, 100%, 0.8);
+  padding: 0px 5px;
+  font-size: 40px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+#greeting{
+  font-size: 24px;
+  font-weight: bold;
+  color: hsl(38, 100%, 50%);
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  opacity: 0.5;
+  animation: greet 5s alternate infinite ease;
+}
+@keyframes greet{
+  0%{
+    color: hsl(38, 100%, 50%);
+    letter-spacing: 3px;
+  }
+  100%{
+    color: hsl(20, 100%, 50%);
+    letter-spacing: 25px;
+  }
+}
+  
+#countdown-timer{
+  font-size: 60px;
+  font-weight: bold;
+  color: hsl(0, 0%, 10%);
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: countdown 1s ease infinite;
+}
+@keyframes countdown{
+  0%{
+    color: hsl(0, 0%, 10%);
+  }
+  100%{
+    color: hsl(170, 100%, 18%);
+  }
+}
+
+.winners-original-index{
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: rgb(246, 255, 0);
+  padding: 5px;
+  font-size: 16px;
+}
