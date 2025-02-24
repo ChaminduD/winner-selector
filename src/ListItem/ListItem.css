@@ -72,13 +72,13 @@
 /*------------------------------------- Responsive styles for small screens --------------------------------*/
 @media only screen and (max-width: 576px){
   .list-item{
-    font-size: var(--text-sm);
+    font-size: var(--text-base);
     padding: var(--space-xs) var(--space-xs) var(--space-xs) var(--space-lg);
   }
   .list-item::before{
-    font-size: var(--text-xs);
+    font-size: var(--text-sm);
   }
   .move-icon, .remove-icon{
-    font-size: var(--text-sm);
+    font-size: var(--text-lg);
   }
 }

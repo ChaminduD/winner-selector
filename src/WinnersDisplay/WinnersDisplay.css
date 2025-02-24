@@ -145,8 +145,18 @@
     font-size: var(--text-xs);
   }
   #greeting{
-    font-size: var(--text-xs);
-    top: var(--space-lg);
+    font-size: var(--text-s);
+    top: var(--space-md);
+  }
+  @keyframes greet{
+    0%{
+      color: hsl(38, 100%, 50%);
+      letter-spacing: 0;
+    }
+    100%{
+      color: hsl(20, 100%, 50%);
+      letter-spacing: var(--space-xxs);
+    }
   }
   .winners-container .list-btn{
     top: var(--space-xxs);

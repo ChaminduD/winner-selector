@@ -60,11 +60,15 @@ input[type=number] {
 @media only screen and (max-width: 576px){
     .number-input-container input{
         width: var(--space-xxl);
-        padding: var(--space-xs);
-        font-size: var(--text-lg);
+        padding: var(--space-s);
+        font-size: var(--text-xl);
     }
     .number-input-container label{
-        font-size: var(--text-sm);
+        font-size: var(--text-lg);
         padding: var(--space-xs) var(--space-md);
+    }
+    .arrow-icon{
+        font-size: 1.5rem;
+        padding: 0 var(--space-xxs);
     }
 }

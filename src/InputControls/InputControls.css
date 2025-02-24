@@ -115,19 +115,18 @@
     font-size: var(--text-xs);
   }
   .input-container input[type=text]{
-    padding: var(--space-xs) var(--space-sm);
+    padding: var(--space-s) var(--space-sm);
     font-size: var(--text-base);
   }
 }
 
 @media only screen and (max-width: 576px){
   .input-container input[type=text]{
-    font-size: var(--text-xs);
-    min-width: 200px;
-    align-items: flex-start;
+    min-width: 70%;
   }
   .input-container button{
-    font-size: var(--text-sm);
+    font-size: var(--text-base);
+    padding: var(--space-xs) var(--space-sm);
   }
   #error-message{
     font-size: var(--text-xs);

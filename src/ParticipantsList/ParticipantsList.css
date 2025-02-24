@@ -73,8 +73,8 @@
     margin-top: var(--space-xxl);
   }
   #total-participants{
-    font-size: var(--text-sm);
-    padding: var(--space-s) var(--space-s);
+    font-size: var(--text-base);
+    padding: var(--space-xs) var(--space-s);
     top: -3.5rem;
   }
 }
