@@ -6,16 +6,16 @@
   position: relative;
 }
 .input-container input[type=text]{
-  font-size: 16px;
-  padding: 12px;
-  width: 700px;
-  border: 4px solid hsl(130, 100%, 83%);
+  padding: var(--space-xs) var(--space-sm);
+  font-size: var(--text-xl);
+  width: 55%;
+  border: var(--space-xxs) solid hsl(130, 100%, 83%);
 }
 .input-container button{
-  font-size: 16px;
-  padding: 10px;
+  font-size: var(--text-base);
+  padding: var(--space-xs) var(--space-s);
   font-weight: bold;
-  border-width: 4px;
+  border-width: var(--space-xxs);
   color: hsl(0, 0%, 100%);
   cursor: pointer;
   transition: background-color 0.4s ease;
@@ -27,7 +27,7 @@
 }
 .add-replace-container, .remove-and-counter-container{
   width: 100%;
-  margin-bottom: 15px;
+  margin-bottom: var(--space-sm);
 }
 
 #add-btn{
@@ -40,7 +40,6 @@
 #replace-btn{
   background-color: hsl(27, 88%, 52%);
   border-color: hsl(27, 88%, 52%);
-  margin-right: 20px;
 }
 #replace-btn:hover{
   background-color: hsl(27, 88%, 42%);
@@ -55,8 +54,8 @@
 #select-btn{
   background-color: hsl(270, 88%, 52%);
   border-color: hsl(270, 88%, 52%);
-  padding: 10px 80px;
-  margin-right: 10px;
+  padding: var(--space-xs) var(--space-xxl);
+  margin-right: var(--space-s);
 }
 #select-btn:hover{
   background-color: hsl(270, 88%, 42%);
@@ -73,26 +72,25 @@
   text-transform: uppercase;
 }
 .selector-container{
-  margin-top: 10px;
+  margin-top: var(--space-s);
 }
 
 #error-message{
-  background-color: hsl(0, 100%, 50%);
-  color: hsl(0, 0%, 100%);
-  padding: 5px 20px;
-  font-size: 12px;
+  color: hsl(0, 100%, 50%);
+  padding: var(--space-xxs) var(--space-md);
+  font-size: var(--text-sm);
   font-weight: bold;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: -30px;
+  bottom: var(--space-xl);
   animation: error 1s infinite 1s alternate;
 }
 @keyframes error{
   from{
-    background-color: hsl(0, 100%, 50%);
+    color: hsl(0, 100%, 50%);
   }
   to{
-    background-color: hsl(0, 100%, 40%);
+    color: hsl(0, 100%, 40%);
   }
 }

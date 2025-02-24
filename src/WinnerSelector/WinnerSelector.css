@@ -1,6 +1,6 @@
 .container{
   background-image: linear-gradient(124deg, hsl(139, 100%, 88%), hsl(100, 100%, 88%), hsl(123, 100%, 88%));
-  padding: 40px;
+  padding: var(--space-lg);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,5 +19,5 @@
   }
 }
 .container h1{
-  margin-bottom: 20px;
+  margin-bottom: var(--space-md);
 }

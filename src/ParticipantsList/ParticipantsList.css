@@ -1,13 +1,13 @@
 .list-container{
-  padding: 40px;
-  margin-top: 50px;
+  padding: var(--space-xl);
+  margin-top: var(--space-xl);
   position: relative;
 }
 .participants-list{
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  row-gap: 10px;
-  column-gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  row-gap: var(--space-s);
+  column-gap: var(--space-s);
   list-style-type: none;
   counter-reset: item;
   text-align: center;
@@ -16,7 +16,7 @@
 #shuffle-btn{
   color: hsl(0, 0%, 100%);
   background-color: hsla(0, 0%, 10%, 0.8);
-  left: 4px;
+  left: var(--space-xxs);
   right: auto;
 }
 #shuffle-btn:hover{
@@ -32,16 +32,16 @@
 
 #total-participants{
   position: absolute;
-  top: -40px;
+  top: calc(-1 * var(--space-lg));
   left: 50%;
   transform: translateX(-50%);
-  font-size: 20px;
+  font-size: var(--text-xl);
   font-weight: bold;
   color: hsl(223, 100%, 38%);
   background-color: hsl(160, 100%, 86%);
-  padding: 10px 30px;
+  padding: var(--space-s) var(--space-xxl);
   border: 2px solid hsl(223, 100%, 38%);
   border-left: none;
   border-right: none;
-  box-shadow: inset 0 0 20px hsl(47, 100%, 98%);
+  box-shadow: inset 0 0 var(--space-lg) hsl(47, 100%, 98%);
 }

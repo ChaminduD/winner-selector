@@ -1,3 +1,28 @@
+:root{
+  /* Spacing Scale */
+  --space-xxs: 0.25rem; /* 4px */
+  --space-xs: 0.5rem;   /* 8px */
+  --space-s: 0.75rem;   /* 12px */
+  --space-sm: 1rem;     /* 16px */
+  --space-md: 1.5rem;   /* 24px */
+  --space-lg: 2rem;     /* 32px */
+  --space-xl: 3rem;     /* 48px */
+  --space-xxl: 4rem;    /* 64px */
+
+  /* Typography */
+  --text-xs: 0.75rem;   /* 12px */
+  --text-sm: 0.875rem;  /* 14px */
+  --text-base: 1rem;    /* 16px */
+  --text-lg: 1.125rem;  /* 18px */
+  --text-xl: 1.25rem;   /* 20px */
+
+  /* Breakpoints */
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+}
+
 *{
   padding: 0;
   margin: 0;
@@ -9,12 +34,12 @@ body{
 }
   
 .list-btn{
-  padding: 4px 8px;
-  font-size: 12px;
+  padding: var(--space-xxs) var(--space-xs);
+  font-size: var(--text-xs);
   font-weight: bold;
   position: absolute;
-  right: 4px;
-  top: 4px;
+  right: var(--space-xxs);
+  top: var(--space-xxs);
   color: hsl(0, 0%, 10%);
   background-color: transparent;
   cursor: pointer;
