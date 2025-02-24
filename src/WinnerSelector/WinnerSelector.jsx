@@ -225,6 +225,7 @@ function WinnerSelector(){
                 
                 {/* Input controls section */}
                 <InputControls
+                    list={list}
                     winners={winners}
                     replaceNum={replaceNum}
                     setReplaceNumber={setReplaceNumber}

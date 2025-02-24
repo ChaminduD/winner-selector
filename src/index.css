@@ -15,12 +15,6 @@
   --text-base: 1rem;    /* 16px */
   --text-lg: 1.125rem;  /* 18px */
   --text-xl: 1.25rem;   /* 20px */
-
-  /* Breakpoints */
-  --breakpoint-sm: 576px;
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 992px;
-  --breakpoint-xl: 1200px;
 }
 
 *{
@@ -32,7 +26,8 @@
 body{
   background-color: hsl(47, 100%, 98%);
 }
-  
+
+/* List buttons - Shuffle, Clear List, Remove Selected  */
 .list-btn{
   padding: var(--space-xxs) var(--space-xs);
   font-size: var(--text-xs);
@@ -48,4 +43,11 @@ body{
 .list-btn:hover{
   color: hsl(0, 0%, 100%);
   background-color: hsla(0, 100%, 50%, 0.6);
+}
+
+/*------------------------------------- Responsive styles for small screens --------------------------------*/
+@media only screen and (max-width: 576px){
+  .list-btn{
+    top: calc(-1 * var(--space-xs));
+  }
 }

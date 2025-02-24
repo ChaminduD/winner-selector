@@ -1,3 +1,4 @@
+/* One participant */
 .list-item{
   display: flex;
   color: hsl(0, 0%, 10%);
@@ -9,6 +10,8 @@
   position: relative;
   align-self: center;
 }
+
+/* Participant's position of the list */
 .list-item::before{
   content: counter(item);
   position: absolute;
@@ -19,21 +22,30 @@
   font-size: var(--text-sm);
   font-weight: bold;
 }
+
+/* Move Up, Move Down and Remove buttons */
 .list-item button{
   background-color: transparent;
   border: none;
   cursor: pointer;
   transition: background-color 0.4s ease;
 }
-.list-item button:hover{
+.list-item button:hover:not([disabled]){
   background-color: hsl(163, 100%, 68%);
 }
+.list-item button:disabled{
+  color: hsl(0, 0%, 62%);
+  pointer-events: none;
+  cursor: not-allowed;
+}
 
+/* Participant name */
 .list-text{
   padding-right: var(--space-xs);
   flex: 1;
   word-break: break-word;
 }
+/* Button icons */
 .move-icon, .remove-icon{
   font-size: var(--text-lg);
   padding: 0 var(--space-xxs);
@@ -43,14 +55,30 @@
   color: rgb(199, 69, 69);
 }
 
+/* Highlight participants names in different scenarios */
 .selected{
   background-image: linear-gradient(hsl(0, 0%, 60%), rgb(208, 208, 208));
   color: hsl(0, 0%, 40%);
   pointer-events: none;
+  cursor: not-allowed;
 }
 .remove-range-highlight{
   background-color: hsl(0, 100%, 88%);
 }
 .add-replace-highlight{
   box-shadow: inset 0 0 var(--space-xs) hsl(243, 100%, 33%);
+}
+
+/*------------------------------------- Responsive styles for small screens --------------------------------*/
+@media only screen and (max-width: 576px){
+  .list-item{
+    font-size: var(--text-sm);
+    padding: var(--space-xs) var(--space-xs) var(--space-xs) var(--space-lg);
+  }
+  .list-item::before{
+    font-size: var(--text-xs);
+  }
+  .move-icon, .remove-icon{
+    font-size: var(--text-sm);
+  }
 }

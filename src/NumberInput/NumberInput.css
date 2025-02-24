@@ -14,9 +14,6 @@ input[type=number] {
     display: flex;
     align-items: center;
 }
-.winner-counter-container .number-input-container{
-    margin-left: var(--space-md);
-}
 .number-input-container input{
     width: var(--space-xxl);
     padding: var(--space-xs);
@@ -26,12 +23,15 @@ input[type=number] {
     border: var(--space-xxs) solid hsl(130, 100%, 83%);
 }
 .number-input-container label{
+    font-size: var(--text-base);
     font-weight: bold;
     padding: var(--space-xs) var(--space-s);
     background-color: hsl(130, 100%, 83%);
     border: var(--space-xxs) solid hsl(130, 100%, 83%);
     border-right: none;
 }
+
+/* Increment and Decrement button container */
 .arrow-container{
     display: flex;
     flex-direction: column;
@@ -43,17 +43,28 @@ input[type=number] {
     border: none;
     cursor: pointer;
 }
-
 .arrow-icon{
     font-size: var(--text-xl);
     padding: 0 var(--space-xxs);
 }
-
 .arrow-container button:hover:not([disabled]){
     background-color: hsl(130, 100%, 53%);
 }
-  
-.decrement:disabled {
+.increment:disabled, .decrement:disabled {
     color: hsl(0, 0%, 62%);
-    cursor: default;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+/*------------------------------------- Responsive styles for small screens --------------------------------*/
+@media only screen and (max-width: 576px){
+    .number-input-container input{
+        width: var(--space-xxl);
+        padding: var(--space-xs);
+        font-size: var(--text-lg);
+    }
+    .number-input-container label{
+        font-size: var(--text-sm);
+        padding: var(--space-xs) var(--space-md);
+    }
 }

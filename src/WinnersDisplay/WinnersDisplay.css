@@ -1,9 +1,12 @@
+/* Winners List container */
 .winners-container{
   padding: var(--space-xl);
   position: relative;
   background-image: linear-gradient(90deg, hsl(139, 100%, 88%), hsl(100, 100%, 88%), hsl(139, 100%, 88%));
   box-shadow: inset 0 0 var(--space-xxl) hsl(47, 100%, 98%);
 }
+
+/* Winners name list */
 .winners-list{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -12,6 +15,8 @@
   list-style-type: none;
   counter-reset: item;
 }
+
+/* Winner name */
 .winners-list .winners-list-item{
   text-align: center;
   align-self: center;
@@ -36,6 +41,7 @@
       box-shadow: inset 0 0 var(--space-md) hsl(43, 100%, 59%);
   }
 }
+/* Winner Place */
 .winners-list .winners-list-item::before{
   content: counter(item);
   position: absolute;
@@ -48,12 +54,13 @@
   font-style: italic;
 }
 
+/* Congratulations display */
 #greeting{
   font-size: 1.5rem;
   font-weight: bold;
   color: hsl(38, 100%, 50%);
   position: absolute;
-  top: var(--space-xxs);
+  top: var(--space-xs);
   left: 50%;
   transform: translateX(-50%);
   text-transform: uppercase;
@@ -71,7 +78,8 @@
     letter-spacing: var(--space-md);
   }
 }
-  
+
+/* Countdown timer display */
 #countdown-timer{
   font-size: 3.75rem;
   font-weight: bold;
@@ -91,6 +99,7 @@
   }
 }
 
+/* Winner original index number of participants list*/
 .winners-original-index{
   position: absolute;
   right: 0;
@@ -98,4 +107,55 @@
   background-color: rgb(246, 255, 0);
   padding: var(--space-xxs) var(--space-xs);
   font-size: var(--text-base);
+}
+
+/*------------------------------------- Responsive styles for small screens --------------------------------*/
+@media only screen and (max-width: 768px){
+  #greeting{
+    font-size: var(--text-lg);
+    top: var(--space-md);
+    letter-spacing: var(--space-xxs);
+  }
+  @keyframes greet{
+    0%{
+      color: hsl(38, 100%, 50%);
+      letter-spacing: var(--space-xxs);
+    }
+    100%{
+      color: hsl(20, 100%, 50%);
+      letter-spacing: var(--space-s);
+    }
+  }
+}
+
+@media only screen and (max-width: 576px){
+  .winners-list{
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  .winners-container{
+    padding: var(--space-md);
+    padding-top: var(--space-xl);
+  }
+  .winners-list .winners-list-item{
+    font-size: var(--text-base);
+    padding: var(--space-xs) var(--space-xxl);
+  }
+  .winners-original-index{
+    padding: var(--space-xxs) var(--space-xxs);
+    font-size: var(--text-xs);
+  }
+  #greeting{
+    font-size: var(--text-xs);
+    top: var(--space-lg);
+  }
+  .winners-container .list-btn{
+    top: var(--space-xxs);
+  }
+  .winners-list .winners-list-item::before{
+    font-size: 2rem;
+  }
+  #countdown-timer{
+    font-size: 3rem;
+    top: var(--space-xs);
+  }
 }

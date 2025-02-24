@@ -6,7 +6,16 @@ import { faAngleUp, faAngleDown} from  '@fortawesome/free-solid-svg-icons';
 
 // Reusable number input component with increment/decrement controls
 // Handles validation, error states, and minimum value enforcement
-function NumberInput({id, label, value, setValue, min, placeholder, setError}){
+function NumberInput({
+    id,
+    label,
+    value,
+    setValue,
+    min,
+    placeholder,
+    setError,
+    isExceeds
+}){
     // Increment value while respecting minimum
     function handleIncrement(){
         setValue(prevValue => {
@@ -50,6 +59,7 @@ function NumberInput({id, label, value, setValue, min, placeholder, setError}){
                 <button
                     className="increment"
                     onClick={handleIncrement}
+                    disabled={isExceeds}
                 >
                     <FontAwesomeIcon icon={faAngleUp} className="arrow-icon"/>
                 </button>
@@ -72,7 +82,12 @@ NumberInput.propTypes = {
     setValue: PropTypes.func.isRequired,
     min: PropTypes.number.isRequired,
     placeholder: PropTypes.string, // Input hint text
-    setError: PropTypes.func.isRequired
+    setError: PropTypes.func.isRequired,
+    isExceeds: PropTypes.bool // Optional boolean prop for increment control
 }
+
+NumberInput.defaultProps = {
+    isExceeds: false // Default increment button not disabled
+};
 
 export default NumberInput;

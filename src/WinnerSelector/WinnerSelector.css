@@ -1,3 +1,4 @@
+/* Input Controls container */
 .container{
   background-image: linear-gradient(124deg, hsl(139, 100%, 88%), hsl(100, 100%, 88%), hsl(123, 100%, 88%));
   padding: var(--space-lg);
@@ -7,6 +8,7 @@
   animation: backgroundGradient 5s infinite 1s;
   position: relative;
 }
+
 @keyframes backgroundGradient{
   0%{
       background-image: linear-gradient(124deg, hsl(139, 100%, 88%), hsl(100, 100%, 88%), hsl(123, 100%, 88%));
@@ -18,6 +20,8 @@
       background-image: linear-gradient(124deg, hsl(123, 100%, 88%), hsl(100, 100%, 88%), hsl(139, 100%, 88%));
   }
 }
+
 .container h1{
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
   margin-bottom: var(--space-md);
 }

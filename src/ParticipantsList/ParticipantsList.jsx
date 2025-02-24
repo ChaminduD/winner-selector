@@ -60,6 +60,7 @@ function ParticipantsList({
         {list.map((item, index) =>
           <ListItem
             key={index}
+            list={list}
             item={item}
             index={index}
             moveUp={moveUp}

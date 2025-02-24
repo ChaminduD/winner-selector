@@ -1,8 +1,11 @@
+/* Participants List container */
 .list-container{
   padding: var(--space-xl);
   margin-top: var(--space-xl);
   position: relative;
 }
+
+/* Participants name list */
 .participants-list{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -13,6 +16,7 @@
   text-align: center;
 }
 
+/* Shuffle and Remove Selected list buttons */
 #shuffle-btn{
   color: hsl(0, 0%, 100%);
   background-color: hsla(0, 0%, 10%, 0.8);
@@ -30,11 +34,13 @@
   background-color: hsl(0, 0%, 50%);
 }
 
+/* Total Participants display*/
 #total-participants{
   position: absolute;
   top: calc(-1 * var(--space-lg));
   left: 50%;
   transform: translateX(-50%);
+  text-align: center;
   font-size: var(--text-xl);
   font-weight: bold;
   color: hsl(223, 100%, 38%);
@@ -44,4 +50,31 @@
   border-left: none;
   border-right: none;
   box-shadow: inset 0 0 var(--space-lg) hsl(47, 100%, 98%);
+}
+
+/*------------------------------------- Responsive styles for small screens --------------------------------*/
+@media only screen and (max-width: 768px){
+  #total-participants{
+    font-size: var(--text-lg);
+    padding: var(--space-s) var(--space-lg);
+    top: calc(-1 * var(--space-xl));
+  }
+  .list-container{
+    margin-top: var(--space-xxl);
+  }
+}
+
+@media only screen and (max-width: 576px){
+  .participants-list{
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  .list-container{
+    padding: var(--space-md);
+    margin-top: var(--space-xxl);
+  }
+  #total-participants{
+    font-size: var(--text-sm);
+    padding: var(--space-s) var(--space-s);
+    top: -3.5rem;
+  }
 }

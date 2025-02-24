@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 
 // Reusable list item component with movement controls and visual state indicators
 function ListItem({
+  list,
   item,
   index,
   moveUp,
@@ -29,13 +30,21 @@ function ListItem({
       <span className="list-text">{item}</span>
       
       {/* List item controls */}
-      <button onClick={() => moveUp(index)}>
+      <button
+        onClick={() => moveUp(index)}
+        disabled={index === 0} // Disable when at the top of participants list
+      >
         <FontAwesomeIcon icon={faAngleUp} className="move-icon"/>
       </button>
-      <button onClick={() => moveDown(index)}>
+      <button
+        onClick={() => moveDown(index)}
+        disabled={index === list.length - 1} // Disable when at the end of participants list
+      >
         <FontAwesomeIcon icon={faAngleDown} className="move-icon"/>
       </button>
-      <button onClick={() => removeItem(index)}>
+      <button
+        onClick={() => removeItem(index)}
+      >
         <FontAwesomeIcon icon={faTrash} className="remove-icon"/>
       </button>
     </li>
@@ -43,6 +52,7 @@ function ListItem({
 }
 
 ListItem.propTypes = {
+  list: PropTypes.arrayOf(PropTypes.string).isRequired, // Participants list
   item: PropTypes.string.isRequired, // List item text
   index: PropTypes.number.isRequired,
   moveUp: PropTypes.func.isRequired,

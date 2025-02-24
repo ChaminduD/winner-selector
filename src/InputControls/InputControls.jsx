@@ -12,6 +12,7 @@ import PropTypes from 'prop-types';
  */
 
 function InputControls({
+  list,
   winners,
   replaceNum,
   setReplaceNumber,
@@ -48,6 +49,7 @@ function InputControls({
               min={0}
               placeholder="#"
               setError={setError}
+              isExceeds={list.length <= replaceNum}
             />
             {/* Text input for new item */}
             <input
@@ -77,6 +79,7 @@ function InputControls({
                 min={0}
                 placeholder="#"
                 setError={setError}
+                isExceeds={list.length - 1 <= removeFrom}
               />
               {/* Number input for range end */}
               <NumberInput
@@ -87,6 +90,7 @@ function InputControls({
                 min={0}
                 placeholder="#"
                 setError={setError}
+                isExceeds={list.length <= removeTo}
               />
               {/* Action button */}
               <button id="remove-btn" onClick={removeItemsRange}>Remove</button>
@@ -135,6 +139,8 @@ function InputControls({
 }
 
 InputControls.propTypes = {
+  // Array of participants strings
+  list: PropTypes.arrayOf(PropTypes.string).isRequired,
   // Array of selected winner strings
   winners: PropTypes.arrayOf(PropTypes.string).isRequired,
   // Index position for item replacement

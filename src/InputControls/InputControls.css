@@ -5,12 +5,16 @@
   flex-wrap: wrap;
   position: relative;
 }
+
+/* Add/Replace text input */
 .input-container input[type=text]{
   padding: var(--space-xs) var(--space-sm);
   font-size: var(--text-xl);
   width: 55%;
   border: var(--space-xxs) solid hsl(130, 100%, 83%);
 }
+
+/* Add, Replace, Remove, Select, Reset buttons */
 .input-container button{
   font-size: var(--text-base);
   padding: var(--space-xs) var(--space-s);
@@ -28,6 +32,9 @@
 .add-replace-container, .remove-and-counter-container{
   width: 100%;
   margin-bottom: var(--space-sm);
+}
+.remove-and-counter-container, .winner-counter-container{
+  column-gap: 20px;
 }
 
 #add-btn{
@@ -75,14 +82,14 @@
   margin-top: var(--space-s);
 }
 
+/* Error display */
 #error-message{
   color: hsl(0, 100%, 50%);
-  padding: var(--space-xxs) var(--space-md);
+  width: 100%;
+  text-align: center;
   font-size: var(--text-sm);
   font-weight: bold;
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   bottom: var(--space-xl);
   animation: error 1s infinite 1s alternate;
 }
@@ -92,5 +99,54 @@
   }
   to{
     color: hsl(0, 100%, 40%);
+  }
+}
+
+/*------------------------------------- Responsive styles for small screens --------------------------------*/
+@media only screen and (max-width: 992px){
+  .remove-and-counter-container{
+    flex-direction: column;
+    row-gap: var(--space-sm);
+  }
+}
+
+@media only screen and (max-width: 768px){
+  #error-message{
+    font-size: var(--text-xs);
+  }
+  .input-container input[type=text]{
+    padding: var(--space-xs) var(--space-sm);
+    font-size: var(--text-base);
+  }
+}
+
+@media only screen and (max-width: 576px){
+  .input-container input[type=text]{
+    font-size: var(--text-xs);
+    min-width: 200px;
+    align-items: flex-start;
+  }
+  .input-container button{
+    font-size: var(--text-sm);
+  }
+  #error-message{
+    font-size: var(--text-xs);
+    bottom: var(--space-xl);
+  }
+  .winner-counter-container{
+    flex-direction: column;
+    row-gap: var(--space-sm);
+  }
+  .add-replace-container{
+    flex-wrap: wrap;
+    row-gap: var(--space-xxs);
+  }
+  .remove-range-container{
+    max-width: 300px;
+    flex-wrap: wrap;
+    row-gap: var(--space-xxs);
+  }
+  #select-btn{
+    padding: var(--space-xs) var(--space-xl);
   }
 }

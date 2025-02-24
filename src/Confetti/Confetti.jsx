@@ -60,7 +60,7 @@ function Confetti(){
     return(
         // Container for confetti elements
         // Animation is handled entirely through CSS
-        <div className="celebration-container" ref={containerRef}></div> 
+        <div className="confetti-container" ref={containerRef}></div> 
     );
 }
 
