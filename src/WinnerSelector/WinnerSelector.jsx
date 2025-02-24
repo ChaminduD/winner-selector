@@ -115,6 +115,7 @@ function WinnerSelector(){
         setCountdown(10);
         setPrevCountdown(0);
         setPrevWinnerCount(0);
+        setOriginalWinnerIndexList([]);
     }
 
     // Function: Remove range of items
