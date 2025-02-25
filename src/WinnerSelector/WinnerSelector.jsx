@@ -73,9 +73,9 @@ function WinnerSelector(){
         }else if(list.length === 1){ // Check if only a participant
             setError("Please add more participants!");
         }else if(winnerCount === list.length){ 
-            setError("Not everyone can be a winner!");
-        }else if(countdown <= 0){
-            setError("Please enter valid countdown seconds!");
+            setError("Winner count must be less than participants!");
+        }else if(countdown <= 2){
+            setError("Set countdown to at least 3 seconds!");
         }else{
             const duplicateList = [...list];
             for(let i = duplicateList.length - 1; i > 0; i--){

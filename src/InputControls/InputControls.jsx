@@ -104,7 +104,8 @@ function InputControls({
                 label="Countdown Time"
                 value={countdown}
                 setValue={setCountdown}
-                min={3}
+                min={0}
+                max={60}
                 placeholder="Sec"
                 setError={setError}
               />
@@ -114,8 +115,8 @@ function InputControls({
                 label="Winners"
                 value={winnerCount}
                 setValue={setWinnerCount}
-                min={1}
-                max={list.length}
+                min={0}
+                max={list.length || 1}
                 placeholder="#"
                 setError={setError}
               />

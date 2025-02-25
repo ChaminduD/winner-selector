@@ -18,20 +18,14 @@ function NumberInput({
 }){
     // Increment value while respecting minimum
     function handleIncrement(){
-        setValue(prevValue => {
-            const newValue = Math.max(min, prevValue + 1);
-            setError(""); // Clear any existing errors
-            return newValue;
-        });
+        setValue(prevValue => Math.min(max, prevValue + 1));
+        setError("");
     }
 
     // Decrement value while respecting minimum
     function handleDecrement(){
-        setValue(prevValue => {
-            const newValue = Math.max(min, prevValue - 1);
-            setError(""); // Clear any existing errors
-            return newValue;
-        });
+        setValue(prevValue => Math.max(min, prevValue - 1));
+        setError("");
     }
 
     return(
@@ -49,12 +43,14 @@ function NumberInput({
                 placeholder={placeholder}
                 onChange={(event) => {
                     // Parse input and enforce minimum and maximum values
-                    let inputValue = parseInt(event.target.value);
-                    if(isNaN(inputValue)){
-                        inputValue = min; // If not a number then it minimum number
+                    const value = Math.max(min, parseInt(event.target.value) || min);
+                    // Check input number with maximum value
+                    if(max <= value){
+                        setValue(max);
+                    }else{
+                        setValue(value);
                     }
-                    const value = Math.min(Math.max(min, inputValue), max);
-                    setValue(value);
+                    
                     setError("");
                 }}
             />
@@ -86,13 +82,9 @@ NumberInput.propTypes = {
     value: PropTypes.number.isRequired,
     setValue: PropTypes.func.isRequired,
     min: PropTypes.number.isRequired,
-    max: PropTypes.number, // Optional maximum value
+    max: PropTypes.number.isRequired,
     placeholder: PropTypes.string, // Input hint text
     setError: PropTypes.func.isRequired
 }
-
-NumberInput.defaultProps = {
-    isExceeds: false // Default increment button not disabled
-};
 
 export default NumberInput;
