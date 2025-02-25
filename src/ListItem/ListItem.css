@@ -1,10 +1,11 @@
 /* One participant */
 .list-item{
   display: flex;
+  align-items: center;
   color: hsl(0, 0%, 10%);
   font-size: var(--text-lg);
   font-weight: bold;
-  padding: var(--space-xs) var(--space-xs) var(--space-xs) var(--space-lg);
+  padding: var(--space-xxs) 0 var(--space-xxs) var(--space-lg);
   background-color: hsl(163, 100%, 88%);
   counter-increment: item;
   position: relative;
@@ -25,14 +26,23 @@
 
 /* Move Up, Move Down and Remove buttons */
 .list-item button{
+  padding: var(--space-xxs);
   background-color: transparent;
   border: none;
   cursor: pointer;
   transition: background-color 0.4s ease;
 }
-.list-item button:hover:not([disabled]){
-  background-color: hsl(163, 100%, 68%);
+/* Hover effect for desktop */
+@media (hover: hover){
+  .list-item button:hover:not([disabled]){
+    background-color: hsl(163, 100%, 72%);
+  }
 }
+/* Active effect for touch devices */
+.list-item button:active:not([disabled]){
+  background-color: hsl(163, 100%, 65%);
+}
+
 .list-item button:disabled{
   color: hsl(0, 0%, 62%);
   pointer-events: none;

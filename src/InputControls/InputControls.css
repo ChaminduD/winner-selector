@@ -41,22 +41,13 @@
   background-color: hsl(227, 88%, 52%);
   border-color: hsl(227, 88%, 52%);
 }
-#add-btn:hover{
-  background-color: hsl(227, 88%, 42%);
-}
 #replace-btn{
   background-color: hsl(27, 88%, 52%);
   border-color: hsl(27, 88%, 52%);
 }
-#replace-btn:hover{
-  background-color: hsl(27, 88%, 42%);
-}
 #remove-btn{
   background-color: hsl(0, 88%, 52%);
   border-color: hsl(0, 88%, 52%);
-}
-#remove-btn:hover{
-  background-color: hsl(0, 88%, 42%);
 }
 #select-btn{
   background-color: hsl(270, 88%, 52%);
@@ -64,22 +55,53 @@
   padding: var(--space-xs) var(--space-xxl);
   margin-right: var(--space-s);
 }
-#select-btn:hover{
-  background-color: hsl(270, 88%, 42%);
-}
 #reset-btn{
   color: hsl(0, 0%, 100%);
   background-color: hsl(140, 100%, 36%);
   border-color: hsl(140, 100%, 36%);
 }
-#reset-btn:hover{
-  background-color: hsl(140, 100%, 28%);
-}
+
 .selector-container button{
   text-transform: uppercase;
 }
 .selector-container{
   margin-top: var(--space-s);
+}
+
+/* Hover effect for desktop */
+@media (hover: hover){
+  #add-btn:hover{
+    background-color: hsl(227, 88%, 42%);
+  }
+  #replace-btn:hover{
+    background-color: hsl(27, 88%, 42%);
+  }
+  #remove-btn:hover{
+    background-color: hsl(0, 88%, 42%);
+  }
+  #select-btn:hover{
+    background-color: hsl(270, 88%, 42%);
+  }
+  #reset-btn:hover{
+    background-color: hsl(140, 100%, 28%);
+  }
+}
+
+/* Active effect for touch devices */
+#add-btn:active{
+  background-color: hsl(227, 88%, 45%);
+}
+#replace-btn:active{
+  background-color: hsl(27, 88%, 45%);
+}
+#remove-btn:active{
+  background-color: hsl(0, 88%, 45%);
+}
+#select-btn:active{
+  background-color: hsl(270, 88%, 45%);
+}
+#reset-btn:active{
+  background-color: hsl(140, 100%, 31%);
 }
 
 /* Error display */

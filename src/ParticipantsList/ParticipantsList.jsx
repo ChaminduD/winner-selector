@@ -51,7 +51,7 @@ function ParticipantsList({
       {/* Total participants display */}
       {list.length > 0 &&
         <span id="total-participants">
-          {`Total Participants: ${list.length}`}
+          {`Participants: ${list.length}`}
         </span>
       }
 

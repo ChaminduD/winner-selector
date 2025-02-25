@@ -73,7 +73,7 @@ function WinnerSelector(){
         }else if(list.length === 1){ // Check if only a participant
             setError("Please add more participants!");
         }else if(winnerCount === list.length){ 
-            setError("Not everyone can be a winner! Please reduce the number of winners");
+            setError("Not everyone can be a winner!");
         }else if(countdown <= 0){
             setError("Please enter valid countdown seconds!");
         }else{

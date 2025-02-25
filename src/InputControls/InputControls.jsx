@@ -47,9 +47,9 @@ function InputControls({
               value={replaceNum}
               setValue={setReplaceNumber}
               min={0}
+              max={list.length}
               placeholder="#"
               setError={setError}
-              isExceeds={list.length <= replaceNum}
             />
             {/* Text input for new item */}
             <input
@@ -77,9 +77,9 @@ function InputControls({
                 value={removeFrom}
                 setValue={setRemoveFrom}
                 min={0}
+                max={list.length - 1}
                 placeholder="#"
                 setError={setError}
-                isExceeds={list.length - 1 <= removeFrom}
               />
               {/* Number input for range end */}
               <NumberInput
@@ -88,9 +88,9 @@ function InputControls({
                 value={removeTo}
                 setValue={setRemoveTo}
                 min={0}
+                max={list.length}
                 placeholder="#"
                 setError={setError}
-                isExceeds={list.length <= removeTo}
               />
               {/* Action button */}
               <button id="remove-btn" onClick={removeItemsRange}>Remove</button>
@@ -115,6 +115,7 @@ function InputControls({
                 value={winnerCount}
                 setValue={setWinnerCount}
                 min={1}
+                max={list.length}
                 placeholder="#"
                 setError={setError}
               />

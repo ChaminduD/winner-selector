@@ -12,9 +12,9 @@ function NumberInput({
     value,
     setValue,
     min,
+    max,
     placeholder,
-    setError,
-    isExceeds
+    setError
 }){
     // Increment value while respecting minimum
     function handleIncrement(){
@@ -45,10 +45,15 @@ function NumberInput({
                 type="number"
                 value={value || ""} // Show empty string for 0 values
                 min={min}
+                max={max}
                 placeholder={placeholder}
                 onChange={(event) => {
-                    // Parse input and enforce minimum value
-                    const value = Math.max(min, parseInt(event.target.value) || min);
+                    // Parse input and enforce minimum and maximum values
+                    let inputValue = parseInt(event.target.value);
+                    if(isNaN(inputValue)){
+                        inputValue = min; // If not a number then it minimum number
+                    }
+                    const value = Math.min(Math.max(min, inputValue), max);
                     setValue(value);
                     setError("");
                 }}
@@ -59,7 +64,7 @@ function NumberInput({
                 <button
                     className="increment"
                     onClick={handleIncrement}
-                    disabled={isExceeds}
+                    disabled={value >= max} // Disable when at maximum
                 >
                     <FontAwesomeIcon icon={faAngleUp} className="arrow-icon"/>
                 </button>
@@ -81,9 +86,9 @@ NumberInput.propTypes = {
     value: PropTypes.number.isRequired,
     setValue: PropTypes.func.isRequired,
     min: PropTypes.number.isRequired,
+    max: PropTypes.number, // Optional maximum value
     placeholder: PropTypes.string, // Input hint text
-    setError: PropTypes.func.isRequired,
-    isExceeds: PropTypes.bool // Optional boolean prop for increment control
+    setError: PropTypes.func.isRequired
 }
 
 NumberInput.defaultProps = {

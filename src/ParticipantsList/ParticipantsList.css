@@ -23,16 +23,29 @@
   left: var(--space-xxs);
   right: auto;
 }
-#shuffle-btn:hover{
-  color: hsl(0, 0%, 10%);
-  background-color: hsla(180, 100%, 50%, 0.6);
-}
 #remove-selected-btn{
   right: 84px;
 }
-#remove-selected-btn:hover{
-  background-color: hsl(0, 0%, 50%);
+/* Hover effect for desktop */
+@media (hover: hover){
+  #shuffle-btn:hover{
+    color: hsl(0, 0%, 10%);
+    background-color: hsla(180, 100%, 50%, 0.6);
+  }
+  #remove-selected-btn:hover{
+    background-color: hsl(0, 0%, 50%);
+  }
 }
+/* Active effect for touch devices */
+#shuffle-btn:active{
+  color: hsl(0, 0%, 10%);
+  background-color: hsla(180, 100%, 70%, 0.6);
+}
+#remove-selected-btn:active{
+  background-color: hsl(0, 0%, 20%);
+}
+
+
 
 /* Total Participants display*/
 #total-participants{

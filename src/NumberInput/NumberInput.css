@@ -47,9 +47,17 @@ input[type=number] {
     font-size: var(--text-xl);
     padding: 0 var(--space-xxs);
 }
-.arrow-container button:hover:not([disabled]){
-    background-color: hsl(130, 100%, 53%);
+/* Hover effect for desktop */
+@media (hover: hover){
+    .arrow-container button:hover:not([disabled]){
+        background-color: hsl(130, 100%, 53%);
+    }
 }
+/* Active effect for touch devices */
+.arrow-container button:active:not([disabled]){
+    background-color: hsl(130, 100%, 43%);
+}
+
 .increment:disabled, .decrement:disabled {
     color: hsl(0, 0%, 62%);
     pointer-events: none;
