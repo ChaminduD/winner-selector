@@ -1,4 +1,4 @@
-import WinnerSelector from './WinnerSelector/WinnerSelector.jsx';
+import WinnerSelector from './Components/WinnerSelector/WinnerSelector.jsx';
 
 function App() {
 
